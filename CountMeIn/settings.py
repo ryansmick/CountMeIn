@@ -25,7 +25,7 @@ SECRET_KEY = os.environ['DJANGO_KEY']#'ri9_=s3##5p1!v4^p5_q@ci(7k$i+zd4nr6hanjgv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -129,3 +129,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
 	#os.path.join(PROJECT_ROOT, 'static'),
 )
+
+# Determine app environment and adjust settings accordingly
+APP_ENVIRONMENT = os.environ.get("APP_ENVIRONMENT", "PRODUCTION")
+if APP_ENVIRONMENT  == "DEVELOPMENT":
+	DEBUG = True
+	ALLOWED_HOSTS = []
+elif APP_ENVIRONMENT == "PRODUCTION":
+	ALLOWED_HOSTS = ['*']
