@@ -10,7 +10,8 @@
 		<script type="text/javascript" src="{% static 'check_in/js/jquery-3.1.1.min.js' %}"></script>	
 		<script type="text/javascript" src="{% static 'check_in/js/bootstrap.min.js' %}"></script>	
 	</head>
-	<body>		
+	<body>	
+        <!--Begin navbar-->
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -24,11 +25,12 @@
 				<div role="navigation" class="collapse navbar-collapse" id="headerNavbar">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						<li><a data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					</ul>	
 				</div>	
 			</div>
 		</nav>
+		<!--Left side of navbar-->
 		<div class="container">
 		    <div class="row">
 				<div class="page-header">
@@ -36,5 +38,34 @@
 				</div>
 		    </div>
 		{% block content %}{% endblock %}
+		</div>
+		<!-- Begin Modal-->
+		<div class="modal fade" id="loginModal" role="dialog">
+            <div class="modal-dialog">
+            
+            <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Login</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="loginEmailLabel">Email</span>
+                            <input type="text" class="form-control" id="loginEmail" name="loginEmail" aria-describedby="loginEmailLabel"/>
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="loginPasswordLabel">Password</span>
+                            <input type="password" class="form-control" id="loginPassword" name="loginPassword" aria-describedby="loginPasswordLabel"/>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Login</button>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
 	</body>
 </html>
