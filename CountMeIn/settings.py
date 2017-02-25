@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'CountMeIn.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_mysql',
-	'USER': os.environ["DB_USERNAME"],
-	'PASSWORD': os.environ["DB_PASSWORD"],
-	'HOST': 'localhost',
-	'PORT': '',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'count_me_in',
+        'USER': os.environ["DB_USERNAME"],
+        'PASSWORD': os.environ["DB_PASSWORD"],
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
