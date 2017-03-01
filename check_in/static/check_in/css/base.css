@@ -10,3 +10,12 @@ body{
 .modal-body>.row{
         margin: auto;
 }
+
+.loginAlert{
+    padding: 5px;
+    text-align: center;
+}
+
+.invisible{
+    display: none;
+}
