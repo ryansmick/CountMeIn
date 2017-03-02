@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_POST
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
 
 # Create your views here.
@@ -8,6 +8,7 @@ from django.http import JsonResponse
 def index(request):
 	return render(request, 'check_in/index.html')
 
+# Log a user in
 @require_POST
 def user_login(request):
     username = request.POST['email']
@@ -21,3 +22,9 @@ def user_login(request):
     else:
         # Return an 'invalid login' error message.
         return JsonResponse({'result': 'error', 'message': 'Invalid username or password'})
+
+# Log a user out
+@require_POST
+def user_logout(request):
+    logout(request)
+    return JsonResponse({'result': 'success', 'redirect_url': '/'})
