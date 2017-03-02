@@ -31,6 +31,8 @@ $(document).ready(function(){
                 if(result.result == 'error'){
                     loginAlert = $('#loginAlert')
                     loginAlert.text(result.message);
+                    $('#loginPassword').focus();
+                    $('#loginPassword').select();
                     if( loginAlert.css('display').toLowerCase() == 'none'){
                         //Remove display: none property to make visible
                         loginAlert.removeClass('invisible');
@@ -42,6 +44,13 @@ $(document).ready(function(){
                 }
             }
         });
+    });
+    
+    //Function to click submit if user presses enter when clicked into email or password input box
+    $("#loginEmail, #loginPassword").keyup(function(event){
+        if(event.keyCode == 13){
+            $("#loginSubmit").click();
+        }
     });
     
 });

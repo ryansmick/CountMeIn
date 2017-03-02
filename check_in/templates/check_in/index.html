@@ -1,5 +1,5 @@
 <!--Determine which template to be used based on whether user is authenticated or not-->
-{% extends user.is_authenticated|yesno:"check_in/base.html,check_in/base.html" %}
+{% extends user.is_authenticated|yesno:"check_in/authed_base.html,check_in/base.html" %}
 
 {% block content %}
 <h1>Welcome to the future of event check-ins.</h1>
