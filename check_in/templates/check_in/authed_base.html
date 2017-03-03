@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>CountMeIn</title>
 		{% load static %}
 		<link rel="stylesheet" type="text/css" href="{% static 'check_in/css/bootstrap.min.css' %}">
@@ -9,7 +12,11 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'check_in/css/base.css' %}">		
 		<script type="text/javascript" src="{% static 'check_in/js/jquery-3.1.1.min.js' %}"></script>	
 		<script type="text/javascript" src="{% static 'check_in/js/bootstrap.min.js' %}"></script>	
+		<script type="text/javascript" src="{% static 'check_in/js/general_utils.js' %}"></script>
 		<script type="text/javascript" src="{% static 'check_in/js/authed_base.js' %}"></script>
+		
+		<!--Include csrf token-->
+		{% csrf_token %}
 	</head>
 	<body>	
         <!--Begin navbar-->
@@ -21,7 +28,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#"><i class="fa fa-check-square"></i> CountMeIn</a>
+					<a class="navbar-brand" href="/"><i class="fa fa-check-square"></i> CountMeIn</a>
 				</div>
 				<div role="navigation" class="collapse navbar-collapse" id="headerNavbar">
 					<ul class="nav navbar-nav navbar-right">

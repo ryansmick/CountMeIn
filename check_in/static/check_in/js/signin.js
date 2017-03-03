@@ -1,31 +1,13 @@
 $(document).ready(function(){
     
-    //Function to obtain a cookie's value
-    function getCookie(name) {
-        var cookieValue = null;
-        if (document.cookie && document.cookie != '') {
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = jQuery.trim(cookies[i]);
-                // Does this cookie string begin with the name we want?
-                if (cookie.substring(0, name.length + 1) == (name + '=')) {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                }
-            }
-        }
-        return cookieValue;
-    }
-    
-    //Submit button handler for login button
-    $('#loginSubmit').click(function(){
+    //Define function for login submit button
+    var loginSubmit = function() {
         $.ajax({
             url: '/login',
             type: 'POST',
             data: {
                 'email': $('#loginEmail').val(),
-                'password': $('#loginPassword').val(),
-                'csrfmiddlewaretoken': getCookie('csrftoken')
+                'password': $('#loginPassword').val()
             },
             success: function(result, status, xhr){
                 if(result.result == 'error'){
@@ -44,7 +26,10 @@ $(document).ready(function(){
                 }
             }
         });
-    });
+    }
+    
+    //Submit button handler for login button
+    mobileButtonClick($('#loginSubmit'), loginSubmit);
     
     //Function to click submit if user presses enter when clicked into email or password input box
     $("#loginEmail, #loginPassword").keyup(function(event){
