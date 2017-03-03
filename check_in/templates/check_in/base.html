@@ -12,7 +12,11 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'check_in/css/base.css' %}">		
 		<script type="text/javascript" src="{% static 'check_in/js/jquery-3.1.1.min.js' %}"></script>	
 		<script type="text/javascript" src="{% static 'check_in/js/bootstrap.min.js' %}"></script>	
+		<script type="text/javascript" src="{% static 'check_in/js/general_utils.js' %}"></script>
 		<script type="text/javascript" src="{% static 'check_in/js/signin.js' %}"></script>
+		
+		<!--Include csrf token-->
+		{% csrf_token %}
 	</head>
 	<body>	
         <!--Begin navbar-->

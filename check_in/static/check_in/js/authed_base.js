@@ -22,9 +22,7 @@ $(document).ready(function(){
         $.ajax({
             url: '/logout',
             type: 'POST',
-            data: {
-                'csrfmiddlewaretoken': getCookie('csrftoken')
-            },
+            data: {},
             success: function(result, status, xhr){
                     //Redirect to specified page
                     window.location.href = result.redirect_url;
