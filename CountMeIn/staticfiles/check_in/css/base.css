@@ -1,3 +1,21 @@
 body{
 	padding-top: 70px;
 }
+
+<!--Modal styles-->
+.modal-body{
+        text-align: center;
+}
+
+.modal-body>.row{
+        margin: auto;
+}
+
+.loginAlert{
+    padding: 5px;
+    text-align: center;
+}
+
+.invisible{
+    display: none;
+}
