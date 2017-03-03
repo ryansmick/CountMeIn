@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>CountMeIn</title>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'check_in/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'check_in/css/bootstrap-theme.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'check_in/css/font-awesome.min.css' %}">		
+		<link rel="stylesheet" type="text/css" href="{% static 'check_in/css/base.css' %}">		
+		<script type="text/javascript" src="{% static 'check_in/js/jquery-3.1.1.min.js' %}"></script>	
+		<script type="text/javascript" src="{% static 'check_in/js/bootstrap.min.js' %}"></script>	
+		<script type="text/javascript" src="{% static 'check_in/js/authed_base.js' %}"></script>
+	</head>
+	<body>	
+        <!--Begin navbar-->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#headerNavbar" aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="icon-bar"></span>					
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#"><i class="fa fa-check-square"></i> CountMeIn</a>
+				</div>
+				<div role="navigation" class="collapse navbar-collapse" id="headerNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#"><span class="fa fa-group"></span> Groups</a></li>
+						<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-cogs"></span> My Account <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" id="logoutBtn">Logout</a></li>
+                            </ul>
+                        </li>
+					</ul>	
+				</div>	
+			</div>
+		</nav>
+		<!--Left side of navbar-->
+		<div class="container">
+		    <div class="row">
+				<div class="page-header">
+				    <h1><i class="fa fa-check-square"></i> CountMeIn</h1>
+				</div>
+		    </div>
+		{% block content %}{% endblock %}
+		</div>
+	</body>
+</html>
