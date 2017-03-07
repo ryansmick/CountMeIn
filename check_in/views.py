@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_POST
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 
 # Create your views here.
@@ -28,3 +29,8 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return JsonResponse({'result': 'success', 'redirect_url': '/'})
+
+# Go to the groups page
+@login_required
+def user_groups(request):
+    return render(request, 'check_in/groups.html')

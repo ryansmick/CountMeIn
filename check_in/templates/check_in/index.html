@@ -2,6 +2,15 @@
 {% extends user.is_authenticated|yesno:"check_in/authed_base.html,check_in/base.html" %}
 
 {% block content %}
-<h1>Welcome to the future of event check-ins.</h1>
-<h3>CountMeIn seeks to aid the event check-in process by allowing users to check themselves in online.</h3>
+<div class="container">
+    <div class="row">
+        <div class="page-header">
+            <h1><i class="fa fa-check-square"></i> CountMeIn</h1>
+        </div>
+    </div>
+    <div class="row">
+        <h1>Welcome to the future of event check-ins.</h1>
+        <h3>CountMeIn seeks to aid the event check-in process by allowing users to check themselves in online.</h3>
+    </div>
+</div>
 {% endblock %}
