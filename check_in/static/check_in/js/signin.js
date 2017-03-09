@@ -3,7 +3,7 @@ $(document).ready(function(){
     //Define function for login submit button
     var loginSubmit = function() {
         $.ajax({
-            url: '/login',
+            url: '/accounts/login',
             type: 'POST',
             data: {
                 'email': $('#loginEmail').val(),
