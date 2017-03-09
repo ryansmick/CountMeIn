@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'check_in',
     'site_auth',
+    'group_api',
 ]
 
 MIDDLEWARE = [

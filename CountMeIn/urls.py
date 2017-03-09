@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^', include('check_in.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('site_auth.urls')),
+    url(r'^api/groups/', include('group_api.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
