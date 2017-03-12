@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'groups',
     'site_auth',
-    'group_api',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +57,9 @@ ROOT_URLCONF = 'CountMeIn.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+                os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,9 +124,9 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
 #Extra places for collectstatic to find static files
-STATICFILES_DIRS = (
-	#os.path.join(PROJECT_ROOT, 'static'),
-)
+STATICFILES_DIRS = [
+	os.path.join(BASE_DIR, 'static'), # Root of project, used for project wide files
+]
 
 # Determine app environment and adjust settings accordingly
 APP_ENVIRONMENT = os.environ.get("APP_ENVIRONMENT", "PRODUCTION")

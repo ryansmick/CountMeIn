@@ -1,5 +1,5 @@
 <!--Determine which template to be used based on whether user is authenticated or not-->
-{% extends user.is_authenticated|yesno:"groups/authed_base.html,groups/base.html" %}
+{% extends user.is_authenticated|yesno:"project/authed_base.html,project/base.html" %}
 
 {% block content %}
 <div class="container">
