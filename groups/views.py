@@ -9,11 +9,11 @@ from .models import Group
 
 @require_GET
 def index(request):
-	return render(request, 'check_in/index.html')
+	return render(request, 'groups/index.html')
 
 # Go to the groups page
 @login_required
 @require_GET
-def user_groups(request):
-    return render(request, 'check_in/groups.html')
+def groups(request):
+    return render(request, 'groups/groups.html')
 

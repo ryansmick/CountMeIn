@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^', include('check_in.urls')),
+    url(r'^', include('groups.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('site_auth.urls')),
     url(r'^api/groups/', include('group_api.urls')),

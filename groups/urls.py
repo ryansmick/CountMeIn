@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
 	url(r'^$', views.index, name='index'),
-	url(r'^groups$', views.user_groups, name='user_groups'),
+	url(r'^groups$', views.groups, name='groups'),
 ]
